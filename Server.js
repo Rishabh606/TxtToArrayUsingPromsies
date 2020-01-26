@@ -13,18 +13,11 @@ app.get('/', async (req, res) => {
 }
 );
 
-async function readFile(){
-    let content = "";
-    content =await fs.readFile('newdata.txt','utf-8',(err,data)=>{
-        if(err)throw err;
-        content+=""+data;
-    });
-   return content;
-}
+
 async function Line ()
 {
 
-    let content = await readFile();
+    let content = await fs.readFile('newdata.txt','utf-8');
     let  arr2 = modify(content);
     console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
     console.log(arr2);
